@@ -34,6 +34,11 @@ def _create_adjacency_matrix_from_grid(img):
             if v != v11:
                 A[v, v11] = 1
                 A[v11, v] = 1
+            if col > 0:
+                v2 = img[row+1, col-1]
+                if v == v2:
+                    A[v, v2] = 1
+                    A[v2, v] = 1
     return A
 
 
